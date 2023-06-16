@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/reg_login.css' %}">
+</head>
+<body id="bg" style="background-image:url({% static 'images/travel.jpg' %})">
+
+
+
+<form action=" " method="post" >
+    {% csrf_token %}
+    <h1> User Registration </h1>
+
+    <input type="text"  placeholder="Enter Username" name="uname" ><br><br>
+    <input type="text" placeholder="Enter First Name" name="fname"><br><br>
+    <input type="text" placeholder="Enter Last Name" name="lname"><br><br>
+    <input type="email" placeholder="Enter Email" name="email"><br><br>
+    <input type="password" placeholder="Enter Password" name="pwd"><br><br>
+    <input type="password" placeholder="Confirm Password" name="cpwd"><br><br>
+    <input type="submit" value="Register">
+
+
+
+</form>
+{% for i in messages %}
+<h2>{{i}}</h2>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/reg_login.css' %}">
+</head>
+
+<body id="bg" style="background-image:url({% static 'images/destination_9.jpg' %})">
+<form action="" method="post">
+    {% csrf_token %}
+       <h1>Login</h1>
+    <input type="text" placeholder="Enter Username" name="uname"><br><br>
+    <input type="text" placeholder="Enter Password" name="pwd"><br><br>
+    <input type="submit" Value="Login">
+
+</form>
+{% for i in messages %}
+<h2>{{i}}</h2>
+{% endfor %}
+</body>
+</html>
